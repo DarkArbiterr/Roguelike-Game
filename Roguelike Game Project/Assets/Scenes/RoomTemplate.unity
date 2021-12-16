@@ -378,6 +378,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3748628476204520615, guid: 94ac99f26d6fd3c4d8178faf4693a496,
+        type: 3}
+      propertyPath: speed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748628476204520615, guid: 94ac99f26d6fd3c4d8178faf4693a496,
+        type: 3}
+      propertyPath: coolDown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748628476204520615, guid: 94ac99f26d6fd3c4d8178faf4693a496,
+        type: 3}
+      propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94ac99f26d6fd3c4d8178faf4693a496, type: 3}
 --- !u!4 &1149931296 stripped
@@ -503,6 +518,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748628476204520615, guid: 94ac99f26d6fd3c4d8178faf4693a496,
+        type: 3}
+      propertyPath: speed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748628476204520615, guid: 94ac99f26d6fd3c4d8178faf4693a496,
+        type: 3}
+      propertyPath: coolDown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748628476204520615, guid: 94ac99f26d6fd3c4d8178faf4693a496,
+        type: 3}
+      propertyPath: attackRange
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94ac99f26d6fd3c4d8178faf4693a496, type: 3}

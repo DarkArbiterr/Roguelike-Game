@@ -5,6 +5,9 @@ using UnityEngine;
 public class ChasingEnemy : MonoBehaviour
 {
     public float speed;
+    public float attackRange;
+    private bool coolDownAttack;
+    public float coolDown;
     public EnemyControler enemyControler;
     GameObject target;
     
@@ -18,6 +21,28 @@ public class ChasingEnemy : MonoBehaviour
     {
         enemyControler = GetComponentInParent<EnemyControler>();
         if(enemyControler.notInRoom == false)
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        {
+            if(Vector3.Distance(transform.position, target.transform.position) <= attackRange)
+                Attack();
+            else
+                transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        }
+            
+    }
+
+    void Attack()
+    {
+        if(!coolDownAttack)
+        {
+            GameControler.DamagePlayer(1); 
+            StartCoroutine(CoolDown());
+        }
+    }
+
+    private IEnumerator CoolDown()
+    {
+        coolDownAttack = true;
+        yield return new WaitForSeconds(coolDown);
+        coolDownAttack = false;
     }
 }
