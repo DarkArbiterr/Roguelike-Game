@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class GameControler : MonoBehaviour
 {
     public static GameControler instance;
-    private static int health = 10;
-    private static int maxHealth = 10;
+    private static int health = 6;
+    private static int maxHealth = 6;
     private static float moveSpeed = 5f;
     private static float fireRate = 0.5f;
 
