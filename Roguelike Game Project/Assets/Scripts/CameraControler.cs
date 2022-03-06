@@ -12,7 +12,6 @@ public class CameraControler : MonoBehaviour
     {
         instance = this;
     }
-
     // Update is called once per frame
     void Update()
     {

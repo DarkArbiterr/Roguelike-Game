@@ -8,6 +8,7 @@ public class RoomInfo
     public int x;
     public int y;
     public int type;
+    public bool upDoor, downDoor, leftDoor, rightDoor;
 }
 
 public class RoomControler : MonoBehaviour
@@ -54,22 +55,133 @@ public class RoomControler : MonoBehaviour
         StartCoroutine(LoadRoomRoutine(currentLoadRoomData));
     }
 
-    public void LoadRoom(int type, int x, int y)
+    public void LoadRoom(Room room, int x, int y)
 	{
         if (DoesRoomExist(x,y))
         {
             return;
         }
 		RoomInfo newRoomData = new RoomInfo();
-        newRoomData.type = type;
+        newRoomData.type = room.type;
         newRoomData.x = x;
         newRoomData.y = y;
+        newRoomData.upDoor = room.upDoor;
+        newRoomData.downDoor = room.downDoor;
+        newRoomData.leftDoor = room.leftDoor;
+        newRoomData.rightDoor = room.rightDoor;
         loadRoomQueue.Enqueue(newRoomData);
 	}
 
 	IEnumerator LoadRoomRoutine(RoomInfo room)
 	{
-		AsyncOperation loadRoom = SceneManager.LoadSceneAsync("RoomTemplate", LoadSceneMode.Additive);
+        string path = "Scenes/RoomScenes/BasicRooms/UDLR/1";
+        if (room.upDoor)
+        {
+            if (room.downDoor)
+            {
+                if (room.leftDoor)
+                {
+                    if (room.rightDoor)
+                    {
+                        path = "Scenes/RoomScenes/BasicRooms/UDLR/1";
+                    }
+                    else
+                    {
+                        path = "Scenes/RoomScenes/BasicRooms/UDL/1";
+                    }
+                }
+                else
+                {
+                    if (room.rightDoor)
+                    {
+                        path = "Scenes/RoomScenes/BasicRooms/UDR/1";
+                    }
+                    else
+                    {
+                        path = "Scenes/RoomScenes/BasicRooms/UD/1";
+                    }
+                }
+            }
+            else
+            {
+                if (room.leftDoor)
+                {
+                    if (room.rightDoor)
+                    {
+                        path = "Scenes/RoomScenes/BasicRooms/URL/1";
+                    }
+                    else
+                    {
+                        path = "Scenes/RoomScenes/BasicRooms/UL/1";
+                    }
+                }
+                else
+                {
+                    if (room.rightDoor)
+                    {
+                        path = "Scenes/RoomScenes/BasicRooms/UR/1";
+                    }
+                    else
+                    {
+                        path = "Scenes/RoomScenes/BasicRooms/U/1";
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (room.downDoor)
+            {
+                if (room.leftDoor)
+                {
+                    if (room.rightDoor)
+                    {
+                        path = "Scenes/RoomScenes/BasicRooms/DLR/1";
+                    }
+                    else
+                    {
+                        path = "Scenes/RoomScenes/BasicRooms/LD/1";
+                    }
+                }
+                else
+                {
+                    if (room.rightDoor)
+                    {
+                        path = "Scenes/RoomScenes/BasicRooms/RD/1";
+                    }
+                    else
+                    {
+                        path = "Scenes/RoomScenes/BasicRooms/D/1";
+                    }
+                }
+            }
+            else
+            {
+                if (room.leftDoor)
+                {
+                    if (room.rightDoor)
+                    {
+                        path = "Scenes/RoomScenes/BasicRooms/RL/1";
+                    }
+                    else
+                    {
+                        path = "Scenes/RoomScenes/BasicRooms/L/1";
+                    }
+                }
+                else
+                {
+                    if (room.rightDoor)
+                    {
+                        path = "Scenes/RoomScenes/BasicRooms/R/1";
+                    }
+                    else
+                    {
+                    }
+                }
+            }
+        }
+
+		AsyncOperation loadRoom = SceneManager.LoadSceneAsync(path, LoadSceneMode.Additive);
 		while(loadRoom.isDone == false)
 		{
 			yield return null;
@@ -90,7 +202,7 @@ public class RoomControler : MonoBehaviour
         room.transform.parent = transform;
         isLoadingRoom = false;
 
-        if (loadedRooms.Count == 0)
+        if (room.x == 0 && room.y == 0)
         {
             CameraControler.instance.currentRoom = room;
         }
@@ -111,7 +223,7 @@ public class RoomControler : MonoBehaviour
         UpdateRooms();
     }
 
-    private void UpdateRooms()
+    public void UpdateRooms()
     {
         foreach(DungeonRoom room in loadedRooms)
         {

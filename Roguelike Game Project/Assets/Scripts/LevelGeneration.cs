@@ -151,7 +151,7 @@ public class LevelGeneration : MonoBehaviour
 			mapper.left = room.leftDoor;
 			mapper.position = room.gridPosition;
 			mapper.gameObject.transform.parent = mapRoot;*/
-			RoomControler.instance.LoadRoom(room.type, (int)drawPos.x, (int)drawPos.y);
+			RoomControler.instance.LoadRoom(room, (int)drawPos.x, (int)drawPos.y);
 		}
 	}
 	void SetRoomDoors(){

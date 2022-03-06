@@ -34,5 +34,6 @@ public class DungeonRoom : MonoBehaviour
         {
             RoomControler.instance.OnPlayerEnterRoom(this);
         }
+        RoomControler.instance.OnPlayerEnterRoom(this);
     }
 }

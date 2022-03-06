@@ -14,7 +14,49 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RoomTemplate.unity
     guid: 1c2f958d35ea4db41b24e97ad3c6cca2
-  - enabled: 0
-    path: Assets/Scenes/RoomTemplateWithControler.unity
-    guid: 076aaa568aac7ae4993b794f51b80e3e
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/D/1.unity
+    guid: 3a91a3a401f7a7543bf3c0dfbc09ca79
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/DLR/1.unity
+    guid: eaf95a242e2610343819f8ebadf24eba
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UL/1.unity
+    guid: 7dc32780089debc40ae00542764624d8
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/R/1.unity
+    guid: 6f7c948791b97a84d9979f96bac8bb03
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UR/1.unity
+    guid: 6d842092509e9804db24f1103276ff2a
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UDLR/1.unity
+    guid: 17e379048fafc424aaa71815e0ebacad
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/URL/1.unity
+    guid: 6735f39c4c3ba7c43830e4de1b218a93
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UDL/1.unity
+    guid: bfb52f592087c1940aa64f2d9d2e6220
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UDR/1.unity
+    guid: c020d1fc7b70247408361d0fbc877e4d
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UD/1.unity
+    guid: a007376e359ddd34e9abe3204aca4310
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/RL/1.unity
+    guid: c6a317d6263423a4ab452481b28381a5
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/U/1.unity
+    guid: f728f8c9a21a6534f90f89d3b8f2617a
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/L/1.unity
+    guid: f7a08ae841d26064bab7cf252e62ad0b
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/RD/1.unity
+    guid: 557872c0ea0bfc247a47340984badedd
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/LD/1.unity
+    guid: 153aa66e841bf3944a32a816ad200a93
   m_configObjects: {}
