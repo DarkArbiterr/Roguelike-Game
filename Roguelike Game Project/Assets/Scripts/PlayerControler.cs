@@ -14,6 +14,7 @@ public class PlayerControler : MonoBehaviour
     public float fireDelay;
     public Vector2 move;
     private Vector3 moveDirection;
+    private Animator animator;
     
     // Update is called once per frame
     void Update()
@@ -27,117 +28,33 @@ public class PlayerControler : MonoBehaviour
             lastFire = Time.time;
         }
 
-        //move.x = Input.GetAxisRaw("Horizontal");
-        //move.y = Input.GetAxisRaw("Vertical");
-
-        move = new Vector2(0f, 0f);
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            move.y = +1f;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            move.y = -1f;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            move.x = -1f;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            move.x = +1f;
-        }
+        move.x = Input.GetAxisRaw("Horizontal");
+        move.y = Input.GetAxisRaw("Vertical");
 
         moveDirection = new Vector3(move.x, move.y).normalized;
+        animator.SetFloat("Speed", Mathf.Abs(moveDirection.magnitude * moveSpeed));
+
+        bool flipped = moveDirection.x < 0;
+        this.transform.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f));
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = moveDirection * moveSpeed;
+        if (moveDirection != Vector3.zero)
+        {
+            var movement = moveDirection * moveSpeed * Time.deltaTime;
+            this.transform.Translate(movement, Space.World);
+            //rb.velocity = moveDirection * moveSpeed;
+        }
+        
     }
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator= GetComponent<Animator>();
     }
 
-    private void HandleMovement()
-    {
-        Vector2 movement = new Vector2(0f, 0f);
-        bool isIdle;
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            movement.y = +1f;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            movement.y = -1f;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            movement.x = -1f;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            movement.x = +1f;
-        }
-
-        isIdle = movement.x == 0 && movement.y == 0;
-
-        if (isIdle)
-        {
-            // TODO - animacja "player idle"
-        }
-        else
-        {
-            Vector3 moveDirection = new Vector3(movement.x, movement.y).normalized;
-            Vector3 targetMovePosition = transform.position + moveDirection * moveSpeed * Time.deltaTime;
-            RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, moveDirection, moveSpeed * Time.deltaTime, LayerMask.GetMask("Blocking"));
-            if (raycastHit.collider == null)
-            {
-                // Można się ruszyć, nie napotkano przeszkody
-                // TODO - lastMoveDirection do animacji "player idle"
-                // TODO - animacja chodzenia
-                transform.position = targetMovePosition;
-            }
-            else
-            {
-                // Nie można się ruszyć Diagonalnie, napotkano przeszkodę
-                Vector3 testMoveDirection = new Vector3(moveDirection.x, 0f).normalized;
-                targetMovePosition = transform.position + testMoveDirection * moveSpeed * Time.deltaTime;
-                raycastHit = Physics2D.Raycast(transform.position, testMoveDirection, moveSpeed * Time.deltaTime, LayerMask.GetMask("Blocking"));
-                if (testMoveDirection.x != 0f && raycastHit.collider == null)
-                {
-                    // Można się ruszyć Horyzontalnie
-                    // TODO - lastMoveDirection do animacji "player idle"
-                    // TODO - animacja chodzenia
-                    transform.position = targetMovePosition;
-                }
-                else
-                {
-                    // Nie można ruszyć się Horyzontalnie
-                    testMoveDirection = new Vector3(0f, moveDirection.y).normalized;
-                    targetMovePosition = transform.position + testMoveDirection * moveSpeed * Time.deltaTime;
-                    raycastHit = Physics2D.Raycast(transform.position, testMoveDirection, moveSpeed * Time.deltaTime, LayerMask.GetMask("Blocking"));
-                    if (testMoveDirection.y != 0f && raycastHit.collider == null)
-                    {
-                        // Można ruszyć się Wertykalnie
-                        // TODO - lastMoveDirection do animacji "player idle"
-                        // TODO - animacja chodzenia
-                        transform.position = targetMovePosition;
-                    }
-                    else
-                    {
-                        // Nie można ruszyć się Wertykalnie
-                        // Animacja player idle
-                    }
-                }
-            }
-        }
-
-    }
 
     void Shoot(float x, float y)
     {
