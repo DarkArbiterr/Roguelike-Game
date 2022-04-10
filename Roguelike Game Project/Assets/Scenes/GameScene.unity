@@ -366,7 +366,7 @@ MonoBehaviour:
   rb: {fileID: 761783254}
   bulletPrefab: {fileID: 8113245516947528630, guid: 90694f863fee96b4aa987f378673feae,
     type: 3}
-  bulletSpeed: 420
+  bulletSpeed: 320
   fireDelay: 0.5
   move: {x: 0, y: 0}
 --- !u!212 &761783256

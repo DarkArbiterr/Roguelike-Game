@@ -52,7 +52,7 @@ public class PlayerControler : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator= GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
 
@@ -65,5 +65,46 @@ public class PlayerControler : MonoBehaviour
             (y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) * bulletSpeed,
             0
         );
+
+        // strzał w prawo
+        if (x > 0 && y == 0)
+        {
+            bullet.transform.rotation = Quaternion.Euler(0,0,0);
+        }
+        // strzał w górę
+        if (x == 0 && y > 0)
+        {
+            bullet.transform.rotation = Quaternion.Euler(0,0,90);
+        }
+        // strzał w górę i w prawo
+        if (x > 0 && y > 0)
+        {
+            bullet.transform.rotation = Quaternion.Euler(0,0,45);
+        }
+        // strzał w dół i w prawo
+        if (x > 0 && y < 0)
+        {
+            bullet.transform.rotation = Quaternion.Euler(0,0,-45);
+        }
+        // strzał w dół
+        if (x == 0 && y < 0)
+        {
+            bullet.transform.rotation = Quaternion.Euler(0,0,-90);
+        }
+        // strzał w dół i lewo
+        if (x < 0 && y < 0)
+        {
+            bullet.transform.rotation = Quaternion.Euler(0,0,-135);
+        }
+        // strzał w lewo
+        if (x < 0 && y == 0)
+        {
+            bullet.transform.rotation = Quaternion.Euler(0,0,180);
+        }
+        // strzał w lewo i w górę
+        if (x < 0 && y > 0)
+        {
+            bullet.transform.rotation = Quaternion.Euler(0,0,135);
+        }
     }
 }
