@@ -5,8 +5,10 @@ using UnityEngine;
 public class ChasingEnemy : MonoBehaviour
 {
     public float speed;
+    public Vector2 direction;
     public float attackRange;
     private bool coolDownAttack;
+    private bool facingRight = true;
     public float coolDown;
     public EnemyControler enemyControler;
     GameObject target;
@@ -22,6 +24,17 @@ public class ChasingEnemy : MonoBehaviour
         enemyControler = GetComponentInParent<EnemyControler>();
         if(enemyControler.notInRoom == false)
         {
+            direction = target.transform.position - transform.position;
+
+            if (direction.x < 0 && facingRight)
+            {
+                Flip();
+            }
+            if (direction.x > 0 && !facingRight)
+            {
+                Flip();
+            }
+
             if(Vector3.Distance(transform.position, target.transform.position) <= attackRange)
                 Attack();
             else
@@ -37,6 +50,14 @@ public class ChasingEnemy : MonoBehaviour
             GameControler.DamagePlayer(1); 
             StartCoroutine(CoolDown());
         }
+    }
+
+    void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+        facingRight = !facingRight;
     }
 
     private IEnumerator CoolDown()

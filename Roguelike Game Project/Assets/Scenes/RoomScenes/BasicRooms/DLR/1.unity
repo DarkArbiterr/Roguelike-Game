@@ -312,6 +312,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3748628476204520614, guid: 94ac99f26d6fd3c4d8178faf4693a496,
         type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748628476204520614, guid: 94ac99f26d6fd3c4d8178faf4693a496,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748628476204520614, guid: 94ac99f26d6fd3c4d8178faf4693a496,
+        type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 746211ca153ccba41940e25439b7781e,
@@ -668,6 +678,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1987838985}
     m_Modifications:
+    - target: {fileID: 626697459, guid: 94ac99f26d6fd3c4d8178faf4693a496, type: 3}
+      propertyPath: currentState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1229619386, guid: 94ac99f26d6fd3c4d8178faf4693a496, type: 3}
       propertyPath: m_Size.x
       value: 17.972618
