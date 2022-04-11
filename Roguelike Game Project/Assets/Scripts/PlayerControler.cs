@@ -81,30 +81,30 @@ public class PlayerControler : MonoBehaviour
         {
             bullet.transform.rotation = Quaternion.Euler(0,0,45);
         }
-        // strzał w dół i w prawo
+        // strzał w dół i w prawo !!
         if (x > 0 && y < 0)
         {
-            bullet.transform.rotation = Quaternion.Euler(0,0,-45);
+            bullet.transform.rotation = Quaternion.Euler(0,180,-135);
         }
         // strzał w dół
         if (x == 0 && y < 0)
         {
             bullet.transform.rotation = Quaternion.Euler(0,0,-90);
         }
-        // strzał w dół i lewo
+        // strzał w dół i lewo 
         if (x < 0 && y < 0)
         {
             bullet.transform.rotation = Quaternion.Euler(0,0,-135);
         }
-        // strzał w lewo
+        // strzał w lewo !!
         if (x < 0 && y == 0)
         {
-            bullet.transform.rotation = Quaternion.Euler(0,0,180);
+            bullet.transform.rotation = Quaternion.Euler(180,0,180);
         }
-        // strzał w lewo i w górę
+        // strzał w lewo i w górę !!
         if (x < 0 && y > 0)
         {
-            bullet.transform.rotation = Quaternion.Euler(0,0,135);
+            bullet.transform.rotation = Quaternion.Euler(0,180,45);
         }
     }
 }

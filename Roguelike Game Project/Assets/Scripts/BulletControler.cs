@@ -5,6 +5,8 @@ using UnityEngine;
 public class BulletControler : MonoBehaviour
 {
     public float lifeTime;
+    private Animator animator;
+    public GameObject fallEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,7 @@ public class BulletControler : MonoBehaviour
     IEnumerator DeathDelay()
     {
         yield return new WaitForSeconds(lifeTime);
+        Instantiate(fallEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 
