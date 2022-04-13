@@ -40,13 +40,7 @@ public class PlayerControler : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (moveDirection != Vector3.zero)
-        {
-            var movement = moveDirection * moveSpeed * Time.deltaTime;
-            this.transform.Translate(movement, Space.World);
-            //rb.velocity = moveDirection * moveSpeed;
-        }
-        
+            rb.velocity = moveDirection * moveSpeed;
     }
 
     private void Awake()
