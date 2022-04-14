@@ -5,6 +5,9 @@ using UnityEngine;
 public class BulletControler : MonoBehaviour
 {
     public float lifeTime;
+    public float pushPower;
+    public float knockTime;
+    public float damage;
     private Animator animator;
     public GameObject fallEffect;
     // Start is called before the first frame update
@@ -23,15 +26,25 @@ public class BulletControler : MonoBehaviour
     {
         yield return new WaitForSeconds(lifeTime);
         Instantiate(fallEffect, transform.position, transform.rotation);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D colider)
     {
         if(colider.tag == "Enemy")
         {
-            colider.gameObject.GetComponent<EnemyControler>().Death();
+            bool isKnockback = colider.GetComponent<EnemyControler>().isKnockback;
+            Rigidbody2D enemy = colider.GetComponent<Rigidbody2D>();
+            if (isKnockback)
+            {
+                Vector2 difference = enemy.transform.position - transform.position;
+                difference = difference.normalized * pushPower;
+                enemy.AddForce(difference, ForceMode2D.Impulse);
+                
+            }
             Destroy(gameObject);
+            colider.gameObject.GetComponent<EnemyControler>().Hit(damage);
+            
         }
         if(colider.tag == "Wall")
         {

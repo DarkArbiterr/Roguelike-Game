@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 3748628476204520609}
   - component: {fileID: 3748628476204520614}
   - component: {fileID: 3748628476204520615}
-  - component: {fileID: 1229619386}
-  - component: {fileID: 1229619385}
   - component: {fileID: 626697459}
-  m_Layer: 7
+  - component: {fileID: 931707501}
+  - component: {fileID: 931707500}
+  - component: {fileID: 931707505}
+  m_Layer: 0
   m_Name: ChasingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3748628476204520612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.9, y: 2.11, z: 0}
-  m_LocalScale: {x: 64, y: 64, z: 64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,9 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: ac7e8fdfbcf8c854a90e98171eee5665,
-    type: 3}
-  m_Color: {r: 0.8490566, g: 0.1802243, b: 0.21908106, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 746211ca153ccba41940e25439b7781e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,11 +100,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 96
+  direction: {x: 0, y: 0}
   attackRange: 1
   coolDown: 2
   enemyControler: {fileID: 0}
---- !u!61 &1229619386
-BoxCollider2D:
+--- !u!114 &626697459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3748628476204520612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360e9dec10a959746aa65e440edc2162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
+  currentState: 2
+  colorToTurnTo: {r: 1, g: 0, b: 0, a: 1}
+  notInRoom: 0
+  isKnockback: 1
+--- !u!60 &931707501
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -120,40 +138,59 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 42, y: 32}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &1229619385
-MonoBehaviour:
+  m_Points:
+    m_Paths:
+    - - {x: 5.373726, y: 2.3696594}
+      - {x: -5.1232185, y: 2.620163}
+      - {x: -11.620161, y: -4.131363}
+      - {x: -11.995926, y: -10.997971}
+      - {x: -8.490831, y: -15.749496}
+      - {x: 7.866596, y: -15.749481}
+      - {x: 11.620162, y: -11.620163}
+      - {x: 11.494906, y: -3.6303558}
+--- !u!95 &931707500
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3748628476204520612}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 360e9dec10a959746aa65e440edc2162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 2
-  notInRoom: 0
---- !u!114 &626697459
-MonoBehaviour:
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5b54e0fe2986cd449bafd5931d7bc2c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &931707505
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3748628476204520612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 360e9dec10a959746aa65e440edc2162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 2
-  notInRoom: 0
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 3
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

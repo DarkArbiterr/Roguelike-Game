@@ -15,6 +15,7 @@ public class PlayerControler : MonoBehaviour
     public Vector2 move;
     private Vector3 moveDirection;
     private Animator animator;
+    public float damage = 5;
     
     // Update is called once per frame
     void Update()
@@ -59,7 +60,7 @@ public class PlayerControler : MonoBehaviour
             (y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) * bulletSpeed,
             0
         );
-
+        bullet.GetComponent<BulletControler>().damage = damage;
         // strzał w prawo
         if (x > 0 && y == 0)
         {

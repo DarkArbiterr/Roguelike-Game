@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1953727070856520529}
   - component: {fileID: 3805845659096887729}
   - component: {fileID: 117535328511163315}
-  - component: {fileID: 4427960303979246204}
+  - component: {fileID: 2159714936563609113}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -98,10 +98,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 1
+  pushPower: 100
+  knockTime: 2
   fallEffect: {fileID: 2849738349145184788, guid: 96a407569be28e249a96e0b737848dda,
     type: 3}
---- !u!60 &4427960303979246204
-PolygonCollider2D:
+--- !u!61 &2159714936563609113
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -113,7 +115,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 9.846417, y: 1.4966712}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -123,19 +125,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 2.0609207, y: 9.57664}
-      - {x: 10.615086, y: 1.477519}
-      - {x: -7.5794945, y: 1.5867167}
-      - {x: -17.325947, y: 7.7936134}
-      - {x: -11.701958, y: 0.96166325}
-      - {x: -16.426125, y: -5.5738716}
-      - {x: -8.531784, y: -0.15877533}
-      - {x: 9.721127, y: 1.197587}
-      - {x: 2.2436695, y: -7.677202}
-      - {x: 7.3984375, y: -7.4095116}
-      - {x: 12.418068, y: -3.8690119}
-      - {x: 17.242386, y: 1.0027685}
-      - {x: 17.493078, y: 1.3176403}
-      - {x: 7.139435, y: 9.576641}
+  serializedVersion: 2
+  m_Size: {x: 16.547411, y: 13.429996}
+  m_EdgeRadius: 0
