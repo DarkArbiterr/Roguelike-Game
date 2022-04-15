@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MagicTowerProjectile : MonoBehaviour
 {
-    public float projectileSpeed;
     public float lifeTime;
     private GameObject player;
     private Vector2 target;

@@ -8,7 +8,9 @@ public class MagicTowerControler : MonoBehaviour
     public float fireDelay;
     public EnemyControler enemyControler;
     public GameObject projectile;
+    private bool shootNewProjectile = true;
     private GameObject player;
+    private float delay = 0.73f;
 
 
     // Start is called before the first frame update
@@ -24,13 +26,23 @@ public class MagicTowerControler : MonoBehaviour
         enemyControler = GetComponentInParent<EnemyControler>();
         if(enemyControler.notInRoom == false)
         {
-            if (Time.time > lastFire + fireDelay)
+            if (shootNewProjectile)
+                StartCoroutine(StartDelay());
+        }
+    }
+
+    IEnumerator StartDelay()
+    {
+        shootNewProjectile = false;
+        yield return new WaitForSeconds(delay);
+        if (Time.time > lastFire + fireDelay)
             {
                 Shoot();
                 lastFire = Time.time;
             }
-            
-        }
+        shootNewProjectile = true;
+        if (delay == 0.73f)
+            delay = 1.33f;
     }
 
     void Shoot()
