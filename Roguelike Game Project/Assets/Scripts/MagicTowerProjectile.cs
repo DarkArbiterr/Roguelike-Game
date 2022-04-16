@@ -33,4 +33,12 @@ public class MagicTowerProjectile : MonoBehaviour
         
         
     }
+
+    void OnTriggerEnter2D(Collider2D colider)
+    {
+        if(colider.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

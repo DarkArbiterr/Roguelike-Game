@@ -9,16 +9,25 @@ public enum EnemyState
     Waiting
 };
 
+public enum EnemyType
+{
+    MiniSlime,
+    BigSlime,
+    MagicTower
+};
+
 public class EnemyControler : MonoBehaviour
 {
     // Start is called before the first frame update
     public float health;
     public static EnemyControler instance;
     public EnemyState currentState = EnemyState.Waiting;
+    public EnemyType enemyType;
+    public GameObject enemySpawnOnDeath;
     private SpriteRenderer rend;
-    public Color colorToTurnTo = Color.red;
+    private Color colorToTurnTo = Color.red;
     public bool notInRoom = false;
-    public bool isKnockback;
+    public bool isKnockback; 
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
@@ -61,7 +70,19 @@ public class EnemyControler : MonoBehaviour
 
     public void Death()
     {
-        Destroy(gameObject);
+        switch (enemyType)
+        {
+            case(EnemyType.MiniSlime):
+                Destroy(gameObject);
+                break;
+            case(EnemyType.BigSlime):
+                BigSlimeDeath();
+                break;
+            case(EnemyType.MagicTower):
+                Destroy(gameObject);
+                break;
+            
+        }
     }
 
     IEnumerator HitVisual()
@@ -73,5 +94,22 @@ public class EnemyControler : MonoBehaviour
     void Waiting()
     {
         
+    }
+
+    void BigSlimeDeath()
+    {
+        float x = Random.Range(-20f, 20f);
+        float y = Random.Range(-20f, 20f);
+        Instantiate(enemySpawnOnDeath, transform.position + new Vector3(x,y,0), Quaternion.identity);
+        x = Random.Range(-20f, 20f);
+        y = Random.Range(-20f, 20f);
+        Instantiate(enemySpawnOnDeath, transform.position + new Vector3(x,y,0), Quaternion.identity);
+        x = Random.Range(-20f, 20f);
+        y = Random.Range(-20f, 20f);
+        Instantiate(enemySpawnOnDeath, transform.position + new Vector3(x,y,0), Quaternion.identity);
+        x = Random.Range(-20f, 20f);
+        y = Random.Range(-20f, 20f);
+        Instantiate(enemySpawnOnDeath, transform.position + new Vector3(x,y,0), Quaternion.identity);
+        Destroy(gameObject);
     }
 }

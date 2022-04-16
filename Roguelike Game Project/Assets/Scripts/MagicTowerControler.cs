@@ -49,4 +49,6 @@ public class MagicTowerControler : MonoBehaviour
     {
         Instantiate(projectile, transform.position, Quaternion.identity);
     }
+
+    
 }
