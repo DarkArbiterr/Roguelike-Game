@@ -7,6 +7,7 @@ TagManager:
   - Room
   - Enemy
   - Wall
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -61,4 +62,34 @@ TagManager:
     locked: 0
   - name: 6
     uniqueID: 2702518807
+    locked: 0
+  - name: 7
+    uniqueID: 1394709099
+    locked: 0
+  - name: 8
+    uniqueID: 2004877031
+    locked: 0
+  - name: 9
+    uniqueID: 2213846443
+    locked: 0
+  - name: 10
+    uniqueID: 1789587291
+    locked: 0
+  - name: 11
+    uniqueID: 3831610135
+    locked: 0
+  - name: 12
+    uniqueID: 3625081077
+    locked: 0
+  - name: 13
+    uniqueID: 823255153
+    locked: 0
+  - name: 14
+    uniqueID: 3245990055
+    locked: 0
+  - name: 15
+    uniqueID: 1420539557
+    locked: 0
+  - name: Player
+    uniqueID: 3592342105
     locked: 0

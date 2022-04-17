@@ -26,7 +26,7 @@ public class BulletControler : MonoBehaviour
     {
         yield return new WaitForSeconds(lifeTime);
         Instantiate(fallEffect, transform.position, transform.rotation);
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D colider)
@@ -46,7 +46,7 @@ public class BulletControler : MonoBehaviour
             colider.gameObject.GetComponent<EnemyControler>().Hit(damage);
             
         }
-        if(colider.tag == "Wall")
+        if(colider.tag == "Wall" || colider.tag == "Obstacle" || colider.tag == "Room")
         {
             Destroy(gameObject);
         }
