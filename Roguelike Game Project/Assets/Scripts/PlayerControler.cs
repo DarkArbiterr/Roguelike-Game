@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerControler : MonoBehaviour
 {
     public static PlayerControler instance;
+    public float invincibleTime;
+    public float invincibleDeltaTime;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     private float shootHorizontal, shootVertical;
@@ -15,7 +17,11 @@ public class PlayerControler : MonoBehaviour
     public Vector2 move;
     private Vector3 moveDirection;
     private Animator animator;
+    private HealthControler healthControler;
+    private bool isInvincible = false;
     public float damage = 5;
+    public GameObject model;
+    private GameControler gameController;
     
     // Update is called once per frame
     void Update()
@@ -33,10 +39,10 @@ public class PlayerControler : MonoBehaviour
         move.y = Input.GetAxisRaw("Vertical");
 
         moveDirection = new Vector3(move.x, move.y).normalized;
-        animator.SetFloat("Speed", Mathf.Abs(moveDirection.magnitude * moveSpeed));
+        model.GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(moveDirection.magnitude * moveSpeed));
 
         bool flipped = moveDirection.x < 0;
-        this.transform.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f));
+        model.transform.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f));
     }
 
     private void FixedUpdate()
@@ -48,6 +54,57 @@ public class PlayerControler : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        healthControler = GetComponent<HealthControler>();
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControler>();
+    }
+
+    public void DamagePlayer()
+    {
+        if(isInvincible)
+            return;
+        
+        healthControler.health -= 1;
+        
+        if (healthControler.health == 0)
+        {
+            KillPlayer();
+            return;
+        }
+
+        StartCoroutine(Invulnerable());
+    }
+
+    IEnumerator Invulnerable()
+    {
+        Debug.Log("Player turned invincible!");
+        isInvincible = true;
+
+        for (float i = 0; i < invincibleTime; i += invincibleDeltaTime)
+        {
+            if (model.transform.localScale == Vector3.one)
+            {
+                ScaleModelTo(Vector3.zero);
+            }
+            else
+            {
+                ScaleModelTo(Vector3.one);
+            }
+            yield return new WaitForSeconds(invincibleDeltaTime);
+        }
+        isInvincible = false;
+        ScaleModelTo(Vector3.one);
+        Debug.Log("Player is no longer invincible!");
+    }
+
+    private void ScaleModelTo(Vector3 scale)
+    {
+        model.transform.localScale = scale;
+    }
+
+    public void KillPlayer()
+    {
+        gameController.GameOver();
+        Destroy(gameObject);
     }
 
 

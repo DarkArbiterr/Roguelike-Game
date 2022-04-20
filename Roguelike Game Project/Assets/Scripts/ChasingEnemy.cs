@@ -48,7 +48,7 @@ public class ChasingEnemy : MonoBehaviour
     {
         if(!coolDownAttack)
         {
-            GameControler.DamagePlayer(1); 
+            target.GetComponent<PlayerControler>().DamagePlayer();
             StartCoroutine(CoolDown());
         }
     }

@@ -40,5 +40,10 @@ public class MagicTowerProjectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if(colider.tag == "Player")
+        {
+            player.GetComponent<PlayerControler>().DamagePlayer();
+            Destroy(gameObject);
+        }
     }
 }

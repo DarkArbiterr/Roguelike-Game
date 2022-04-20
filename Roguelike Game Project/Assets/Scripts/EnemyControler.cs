@@ -100,16 +100,20 @@ public class EnemyControler : MonoBehaviour
     {
         float x = Random.Range(-20f, 20f);
         float y = Random.Range(-20f, 20f);
-        Instantiate(enemySpawnOnDeath, transform.position + new Vector3(x,y,0), Quaternion.identity);
+        var newSlime = Instantiate(enemySpawnOnDeath, transform.position + new Vector3(x,y,0), Quaternion.identity);
+        newSlime.transform.parent = gameObject.transform.parent;
         x = Random.Range(-20f, 20f);
         y = Random.Range(-20f, 20f);
-        Instantiate(enemySpawnOnDeath, transform.position + new Vector3(x,y,0), Quaternion.identity);
+        newSlime = Instantiate(enemySpawnOnDeath, transform.position + new Vector3(x,y,0), Quaternion.identity);
+        newSlime.transform.parent = gameObject.transform.parent;
         x = Random.Range(-20f, 20f);
         y = Random.Range(-20f, 20f);
-        Instantiate(enemySpawnOnDeath, transform.position + new Vector3(x,y,0), Quaternion.identity);
+        newSlime = Instantiate(enemySpawnOnDeath, transform.position + new Vector3(x,y,0), Quaternion.identity);
+        newSlime.transform.parent = gameObject.transform.parent;
         x = Random.Range(-20f, 20f);
         y = Random.Range(-20f, 20f);
-        Instantiate(enemySpawnOnDeath, transform.position + new Vector3(x,y,0), Quaternion.identity);
+        newSlime = Instantiate(enemySpawnOnDeath, transform.position + new Vector3(x,y,0), Quaternion.identity);
+        newSlime.transform.parent = gameObject.transform.parent;
         Destroy(gameObject);
     }
 }

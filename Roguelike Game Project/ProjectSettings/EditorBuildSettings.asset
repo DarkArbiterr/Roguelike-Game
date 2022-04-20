@@ -59,4 +59,229 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RoomScenes/BasicRooms/LD/1.unity
     guid: 153aa66e841bf3944a32a816ad200a93
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/D/2.unity
+    guid: 5a0162d0c12abe7438b5534d045393fb
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/D/3.unity
+    guid: f4e461a596c320c4192a0a53196d2d3d
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/D/4.unity
+    guid: 4ca400572978ec148a6e6b20a757eedf
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/D/5.unity
+    guid: f546274eb6f4adc479441436c3f1b70f
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/DLR/2.unity
+    guid: ed082cc31dda55b49a3bf476d12fa66f
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/DLR/3.unity
+    guid: 9e7c9090f1bae20459b7f612603c72f2
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/DLR/4.unity
+    guid: 9ef85559249ec22459de02bc3e0c5d31
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/DLR/5.unity
+    guid: d86e0cf9433d3444897c6fdfc41bec9f
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/L/2.unity
+    guid: b1e4eb3db9e6f734ea8eca0202fb4929
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/L/3.unity
+    guid: 59f1c2366e88f8c449dd27a58e96c792
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/L/4.unity
+    guid: 171416c99afa9af4db9671389ec7e1b7
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/L/5.unity
+    guid: 67d0aaccf1f31e9488ba7f7ea4e859cc
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/LD/5.unity
+    guid: 40a1ab1f95cc5ac44be17cc82b386ae4
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/LD/2.unity
+    guid: 2daf924d4854f2748811b59948ce8319
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/LD/3.unity
+    guid: 5f1d244143ae2a941833a08a61b34736
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/LD/4.unity
+    guid: 64dead9048bce4b4fae96f01f282e83c
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/R/2.unity
+    guid: 5dee1ca133a93da42a9f5c72b71f2523
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/R/3.unity
+    guid: b915c18174da83f459aa22b124fa8776
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/R/4.unity
+    guid: 7731efd6956d07744bab5a56184d4351
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/R/5.unity
+    guid: 294725248620bf34b84f3573789db599
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/RD/2.unity
+    guid: fda67f4652addf942ab6367a49a4a915
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/RD/3.unity
+    guid: 62ec3440fe2ed1a4ca6da4f1b4a8b9fc
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/RD/4.unity
+    guid: 6d80d5f85f90eb940aaad1f524194ce4
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/RD/5.unity
+    guid: f0c5b32363427e348a5a86dd1700b912
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/RL/2.unity
+    guid: 97293af6635e88849b3c5f3b53b4d3b9
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/RL/3.unity
+    guid: d352146150b5b5d43a860b455af7911a
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/RL/4.unity
+    guid: 2869481f3cdf5374ba09d59186ec86da
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/RL/5.unity
+    guid: 2bc0c2f994bfde147a72c54dacb0e9b2
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/U/2.unity
+    guid: e539f3cc696b4ad45be0d18fe766de28
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/U/3.unity
+    guid: fc82611464bfeb74daae3475f0b43990
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/U/4.unity
+    guid: f76913b8c8f21e14aa0e003717c0811c
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/U/5.unity
+    guid: 8d3a618d404936d44acffabc0b1e8bc4
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UD/2.unity
+    guid: 1fe9db479fffde1489ce846ccb6d141b
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UD/3.unity
+    guid: e628e6eed4fb44e4092857d715af0445
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UD/4.unity
+    guid: 501d1fe7a338c784b859cc33ddfb0b83
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UD/5.unity
+    guid: 72ccd5d53d82ba345a3dd9e1e6ff5bc5
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UDL/2.unity
+    guid: cc2d55f1100aa974b853b6a09a93f16c
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UDL/3.unity
+    guid: 948309f513e8c874ba047627f935a689
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UDL/4.unity
+    guid: c47e6ff52b4601d45ad49d39feb1e9e1
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UDL/5.unity
+    guid: 323e691bd4da5a24a815be8db3aa520d
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UDLR/2.unity
+    guid: b9cc8b56a1afb9e40ada89d0977a7840
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UDLR/3.unity
+    guid: 86ce05674c53e1d40b57eba3b1d8bdb4
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UDLR/4.unity
+    guid: 4b0ba1d4f2f4d8e4fb44bb893ca8e7d9
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UDLR/5.unity
+    guid: 411d4fe2a7080d94da33dedfc829b062
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UDR/2.unity
+    guid: d5aae765c061d7f45aba9d12e5242cc8
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UDR/3.unity
+    guid: 483b7c90ac39dd745bf5ce9143cae1f9
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UDR/4.unity
+    guid: 93e799781fe72944d90835c0ab28a339
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UDR/5.unity
+    guid: f60b4243b99bfbe4992a4b41d3bf4cdc
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UL/2.unity
+    guid: 4b68fd300ee31ec4d9c5dca531e771f7
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UL/3.unity
+    guid: be466a2c19f432b4191dde252650254b
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UL/4.unity
+    guid: aa9287c6af44e934e900204397414504
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UL/5.unity
+    guid: 9f65f22b859f9c64ab147ca52cd07def
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UR/2.unity
+    guid: 48c942b96e2fc324dad2b7685cd2e063
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UR/3.unity
+    guid: 5af679cc948d13e4c85b1efab4cfe02f
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UR/4.unity
+    guid: fb2656eab94ac644aa608bf7cf2676e3
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/UR/5.unity
+    guid: 1239880ad9d9ebe4bad32e9ce384260b
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/URL/2.unity
+    guid: b45636d95443b8a4fae2aa7deef06bba
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/URL/3.unity
+    guid: 5dd2fb404ed400d48a174c5e215d5abe
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/URL/4.unity
+    guid: 3f9002fa8eba75c468e48181f9d6e72f
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/BasicRooms/URL/5.unity
+    guid: d777bc333abc4474fa20fc1c6e2358dd
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/StartingRooms/L/1.unity
+    guid: f34cb8ed27502eb44bc4f4fcac04e051
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/StartingRooms/DLR/1.unity
+    guid: 4b4938d95468c08449943088aa2f61b7
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/StartingRooms/RL/1.unity
+    guid: bd0c14e07ab53d848a631e8cad4bcba0
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/StartingRooms/RD/1.unity
+    guid: eac406f349bd0ee4183b6b98a9c8fe32
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/StartingRooms/UDL/1.unity
+    guid: 5c8f087b7ecd53a4b83a39cf191fb09f
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/StartingRooms/UD/1.unity
+    guid: a73f23270f34e7046891381f56ebeacf
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/StartingRooms/UDR/1.unity
+    guid: ba52d745eebe5a24b9937c30b642f0c7
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/StartingRooms/UDLR/1.unity
+    guid: 1f1421a241cb9844fa468ce7de36c18d
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/StartingRooms/U/1.unity
+    guid: 12302e43e2abaf5478e74703193dfb1d
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/StartingRooms/LD/1.unity
+    guid: 2e38931493806134bb6b0c22b9d83675
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/StartingRooms/R/1.unity
+    guid: be2bd980d1ad8a14bbb57472dd1750cf
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/StartingRooms/UL/1.unity
+    guid: 8da3fd76376811847afa2f8d8d37c8da
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/StartingRooms/URL/1.unity
+    guid: 88d64262bd72e75459abda0ed30a6bbb
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/StartingRooms/UR/1.unity
+    guid: d8b5f8f3ddd1c6b4b889c2442e088ca5
+  - enabled: 1
+    path: Assets/Scenes/RoomScenes/StartingRooms/D/1.unity
+    guid: 97f7b75377720cf49b2196de46f84bb5
   m_configObjects: {}

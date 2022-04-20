@@ -74,7 +74,15 @@ public class RoomControler : MonoBehaviour
 
 	IEnumerator LoadRoomRoutine(RoomInfo room)
 	{
-        string path = "Scenes/RoomScenes/BasicRooms/UDLR/1";
+        int r = Random.Range(1,6);
+        string path = "Scenes/RoomScenes/BasicRooms/";
+
+        if (room.type == 1)
+        {
+            path = "Scenes/RoomScenes/StartingRooms/";
+            r = 1;
+        }   
+
         if (room.upDoor)
         {
             if (room.downDoor)
@@ -83,22 +91,22 @@ public class RoomControler : MonoBehaviour
                 {
                     if (room.rightDoor)
                     {
-                        path = "Scenes/RoomScenes/BasicRooms/UDLR/1";
+                        path += "UDLR/" + r.ToString();
                     }
                     else
                     {
-                        path = "Scenes/RoomScenes/BasicRooms/UDL/1";
+                        path += "UDL/" + r.ToString();
                     }
                 }
                 else
                 {
                     if (room.rightDoor)
                     {
-                        path = "Scenes/RoomScenes/BasicRooms/UDR/1";
+                        path += "UDR/" + r.ToString();
                     }
                     else
                     {
-                        path = "Scenes/RoomScenes/BasicRooms/UD/1";
+                        path += "UD/" + r.ToString();
                     }
                 }
             }
@@ -108,22 +116,22 @@ public class RoomControler : MonoBehaviour
                 {
                     if (room.rightDoor)
                     {
-                        path = "Scenes/RoomScenes/BasicRooms/URL/1";
+                        path += "URL/" + r.ToString();
                     }
                     else
                     {
-                        path = "Scenes/RoomScenes/BasicRooms/UL/1";
+                        path += "UL/" + r.ToString();
                     }
                 }
                 else
                 {
                     if (room.rightDoor)
                     {
-                        path = "Scenes/RoomScenes/BasicRooms/UR/1";
+                        path += "UR/" + r.ToString();
                     }
                     else
                     {
-                        path = "Scenes/RoomScenes/BasicRooms/U/1";
+                        path += "U/" + r.ToString();
                     }
                 }
             }
@@ -136,22 +144,22 @@ public class RoomControler : MonoBehaviour
                 {
                     if (room.rightDoor)
                     {
-                        path = "Scenes/RoomScenes/BasicRooms/DLR/1";
+                        path += "DLR/" + r.ToString();
                     }
                     else
                     {
-                        path = "Scenes/RoomScenes/BasicRooms/LD/1";
+                        path += "LD/" + r.ToString();
                     }
                 }
                 else
                 {
                     if (room.rightDoor)
                     {
-                        path = "Scenes/RoomScenes/BasicRooms/RD/1";
+                        path += "RD/" + r.ToString();
                     }
                     else
                     {
-                        path = "Scenes/RoomScenes/BasicRooms/D/1";
+                        path += "D/" + r.ToString();
                     }
                 }
             }
@@ -161,18 +169,18 @@ public class RoomControler : MonoBehaviour
                 {
                     if (room.rightDoor)
                     {
-                        path = "Scenes/RoomScenes/BasicRooms/RL/1";
+                        path += "RL/" + r.ToString();
                     }
                     else
                     {
-                        path = "Scenes/RoomScenes/BasicRooms/L/1";
+                        path += "L/" + r.ToString();
                     }
                 }
                 else
                 {
                     if (room.rightDoor)
                     {
-                        path = "Scenes/RoomScenes/BasicRooms/R/1";
+                        path += "R/" + r.ToString();
                     }
                     else
                     {
@@ -235,7 +243,7 @@ public class RoomControler : MonoBehaviour
                     foreach(EnemyControler enemy in enemies)
                     {
                         enemy.notInRoom = true;
-                        Debug.Log("Not in room");
+                        //Debug.Log("Not in room");
                     }
                 }
             }
@@ -247,7 +255,7 @@ public class RoomControler : MonoBehaviour
                     foreach(EnemyControler enemy in enemies)
                     {
                         enemy.notInRoom = false;
-                        Debug.Log("In room");
+                        //Debug.Log("In room");
                     }
                 }
             }
