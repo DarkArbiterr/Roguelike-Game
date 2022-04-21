@@ -23,7 +23,7 @@ public class BigSlimeControler : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.tag == "Player" && !coolDownAttack)
+        if(collider.tag == "Hitbox" && !coolDownAttack)
         {
             player.GetComponent<PlayerControler>().DamagePlayer();
             StartCoroutine(CoolDown());
