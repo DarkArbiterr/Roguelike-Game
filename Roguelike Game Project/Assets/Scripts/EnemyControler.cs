@@ -24,6 +24,7 @@ public class EnemyControler : MonoBehaviour
     public EnemyState currentState = EnemyState.Waiting;
     public EnemyType enemyType;
     public GameObject enemySpawnOnDeath;
+    public GameObject coinSpawnOnDeath;
     private SpriteRenderer rend;
     private Color colorToTurnTo = Color.red;
     public bool notInRoom = false;
@@ -70,19 +71,28 @@ public class EnemyControler : MonoBehaviour
 
     public void Death()
     {
+        
         switch (enemyType)
         {
             case(EnemyType.MiniSlime):
+                SpawnCoin();
                 Destroy(gameObject);
                 break;
             case(EnemyType.BigSlime):
                 BigSlimeDeath();
                 break;
             case(EnemyType.MagicTower):
+                SpawnCoin();
                 Destroy(gameObject);
                 break;
             
         }
+    }
+
+    public void SpawnCoin()
+    {
+        var coin = Instantiate(coinSpawnOnDeath, transform.position,Quaternion.identity);
+        coin.transform.parent = gameObject.transform.parent;
     }
 
     IEnumerator HitVisual()

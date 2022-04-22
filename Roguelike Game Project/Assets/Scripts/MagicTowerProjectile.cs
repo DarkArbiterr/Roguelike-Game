@@ -13,11 +13,15 @@ public class MagicTowerProjectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
-        target = new Vector3(player.transform.position.x, player.transform.position.y);
+        if (player != null)
+        {
+            target = new Vector3(player.transform.position.x, player.transform.position.y);
         GetComponent<Rigidbody2D>().velocity = new Vector2(
             player.transform.position.x - transform.position.x,
             player.transform.position.y - transform.position.y).normalized * 400;
         StartCoroutine(DeathDelay());
+        }
+        
     }
 
     IEnumerator DeathDelay()

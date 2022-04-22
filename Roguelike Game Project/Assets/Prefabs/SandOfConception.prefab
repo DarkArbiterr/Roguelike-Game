@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7548709230076404101
+--- !u!1 &1349982526347726882
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7548709230076404102}
-  - component: {fileID: 7548709230076404103}
-  - component: {fileID: 7548709230076404100}
-  - component: {fileID: 7548709230076404096}
-  - component: {fileID: 7548709230076404097}
-  - component: {fileID: 564386509}
+  - component: {fileID: 1349982526347726911}
+  - component: {fileID: 1349982526347726908}
+  - component: {fileID: 1349982526347726909}
+  - component: {fileID: 1349982526347726910}
+  - component: {fileID: 1349982526347726905}
   m_Layer: 0
-  m_Name: BigSlime
-  m_TagString: Enemy
+  m_Name: SandOfConception
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7548709230076404102
+--- !u!4 &1349982526347726911
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7548709230076404101}
+  m_GameObject: {fileID: 1349982526347726882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -224.96823, y: -0.7407799, z: 222}
+  m_LocalPosition: {x: 348, y: -73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7548709230076404103
+--- !u!212 &1349982526347726908
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7548709230076404101}
+  m_GameObject: {fileID: 1349982526347726882}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,32 +71,32 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -44025399
-  m_SortingLayer: 2
+  m_SortingLayerID: -1048977241
+  m_SortingLayer: 14
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3415272527831786713, guid: 0836277e5c68ed942a4f28121937d9a8,
+  m_Sprite: {fileID: -5087832769711658109, guid: ea4614a234ea6fe459083e032f94aff8,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 62, y: 50}
+  m_Size: {x: 64, y: 64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7548709230076404100
+--- !u!95 &1349982526347726909
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7548709230076404101}
+  m_GameObject: {fileID: 1349982526347726882}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6f6f5dc67b0fd274783c134b7e44e059, type: 2}
+  m_Controller: {fileID: 9100000, guid: 98c3d22980227184ab0295da02c72688, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -106,33 +105,13 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7548709230076404096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7548709230076404101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 360e9dec10a959746aa65e440edc2162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 40
-  currentState: 2
-  enemyType: 1
-  enemySpawnOnDeath: {fileID: 3748628476204520612, guid: 94ac99f26d6fd3c4d8178faf4693a496,
-    type: 3}
-  coinSpawnOnDeath: {fileID: 0}
-  notInRoom: 0
-  isKnockback: 0
---- !u!60 &7548709230076404097
+--- !u!60 &1349982526347726910
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7548709230076404101}
+  m_GameObject: {fileID: 1349982526347726882}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -143,34 +122,37 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 62, y: 50}
-    newSize: {x: 62, y: 50}
+    oldSize: {x: 64, y: 64}
+    newSize: {x: 64, y: 64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -7.5455627, y: 14.9147005}
-      - {x: -15.830551, y: 10.985005}
-      - {x: -25.210144, y: -1.9590359}
-      - {x: -24.983078, y: -10.3962555}
-      - {x: -17.184341, y: -24.86554}
-      - {x: 16.873566, y: -24.731075}
-      - {x: 24.714157, y: -10.8317}
-      - {x: 23.638474, y: 0.35262775}
-      - {x: 18.019623, y: 8.416753}
-      - {x: 8.688187, y: 14.833524}
---- !u!114 &564386509
+    - - {x: 4.8605347, y: 8.628155}
+      - {x: 7.962494, y: 19.628563}
+      - {x: -7.591034, y: 19.480347}
+      - {x: -4.5426025, y: 10.107639}
+      - {x: -6.733856, y: 0.37143707}
+      - {x: -18.591064, y: -12.810684}
+      - {x: -19.482147, y: -17.660667}
+      - {x: -17.037506, y: -23.551758}
+      - {x: -5.525055, y: -28.88749}
+      - {x: 4.06781, y: -29.258926}
+      - {x: 14.144623, y: -25.705376}
+      - {x: 19.339691, y: -18.676231}
+      - {x: 18.842651, y: -11.591675}
+      - {x: 9.698151, y: -2.5535507}
+--- !u!114 &1349982526347726905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7548709230076404101}
+  m_GameObject: {fileID: 1349982526347726882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72be9dec053cc9e489329da73f312c6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 2606ecca9697ee14ea9faba477934fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDown: 2

@@ -19,6 +19,7 @@ public class LevelGeneration : MonoBehaviour
 		gridSizeY = Mathf.RoundToInt(worldSize.y);
 		CreateRooms(); //lays out the actual map
 		SetRoomDoors(); //assigns the doors where rooms would connect
+		SetItemRooms();
 		DrawMap(); //instantiates objects to make up a map
 		//SceneManager.LoadSceneAsync("RoomTemplateWithControler", LoadSceneMode.Additive);
 		//RoomControler.instance.LoadRooms(rooms);
@@ -154,6 +155,58 @@ public class LevelGeneration : MonoBehaviour
 			RoomControler.instance.LoadRoom(room, (int)drawPos.x, (int)drawPos.y);
 		}
 	}
+
+	void SetItemRooms()
+	{
+		List<Room> validRooms = new List<Room>();
+		
+		foreach(Room room in rooms)
+		{
+			if (room == null){
+				continue; 
+			}
+
+			if((room.leftDoor && !room.rightDoor && !room.upDoor && !room.downDoor && room.type == 0) ||
+				(!room.leftDoor && room.rightDoor && !room.upDoor && !room.downDoor && room.type == 0) ||
+				(!room.leftDoor && !room.rightDoor && room.upDoor && !room.downDoor && room.type == 0) ||
+				(!room.leftDoor && !room.rightDoor && !room.upDoor && room.downDoor && room.type == 0))
+			{
+				validRooms.Add(room);
+			}
+		}
+
+		int first, second;
+
+		do
+		{
+			first = Random.Range(0, validRooms.Count);
+			second = Random.Range(0, validRooms.Count);
+		}
+		while (first == second);
+
+		validRooms[first].type = 2;
+		validRooms[second].type = 2;
+
+		for (int x = 0; x < ((gridSizeX * 2)); x++)
+		{
+			for (int y = 0; y < ((gridSizeY * 2)); y++)
+			{
+				if (rooms[x,y] == null){
+					continue;
+				}
+				if(rooms[x,y].gridPosition == validRooms[first].gridPosition)
+				{
+					rooms[x,y] = validRooms[first]; 
+				}
+				if(rooms[x,y].gridPosition == validRooms[second].gridPosition)
+				{
+					rooms[x,y] = validRooms[second]; 
+				}
+			}
+		}
+
+	}
+
 	void SetRoomDoors(){
 		for (int x = 0; x < ((gridSizeX * 2)); x++){
 			for (int y = 0; y < ((gridSizeY * 2)); y++){

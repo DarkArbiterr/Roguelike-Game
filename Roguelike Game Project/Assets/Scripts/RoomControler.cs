@@ -81,6 +81,12 @@ public class RoomControler : MonoBehaviour
         {
             path = "Scenes/RoomScenes/StartingRooms/";
             r = 1;
+        }
+
+        if (room.type == 2)
+        {
+            path = "Scenes/RoomScenes/ItemRooms/";
+            r = 1;
         }   
 
         if (room.upDoor)

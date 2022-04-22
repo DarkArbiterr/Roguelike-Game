@@ -30,7 +30,7 @@ public class DungeonRoom : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Movebox")
         {
             RoomControler.instance.OnPlayerEnterRoom(this);
         }

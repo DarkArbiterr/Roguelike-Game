@@ -121,6 +121,8 @@ MonoBehaviour:
   currentState: 2
   enemyType: 0
   enemySpawnOnDeath: {fileID: 0}
+  coinSpawnOnDeath: {fileID: 8961509664781750505, guid: 2d321850d23a2ac47bc66f8262bd6a8d,
+    type: 3}
   notInRoom: 0
   isKnockback: 1
 --- !u!60 &931707501
