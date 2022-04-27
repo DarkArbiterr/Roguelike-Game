@@ -1,0 +1,35 @@
+"filename", "language", "C#", "comment", "blank", "total"
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\BigSlimeControler.cs", "C#", -9, -1, -1, -11
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\BlueberriesControler.cs", "C#", 2, 0, 2, 4
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\BulletControler.cs", "C#", -1, 1, 2, 2
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\BulletFallControler.cs", "C#", -4, -1, -1, -6
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\CameraControler.cs", "C#", -4, 2, 0, -2
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\ChasingEnemy.cs", "C#", 2, 2, -2, 2
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\CoinControler.cs", "C#", 0, -1, 1, 0
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\DrawDungeon.cs", "C#", -12, -2, -5, -19
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\DungeonGenerator.cs", "C#", -6, -244, -2, -252
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\DungeonRoom.cs", "C#", 0, 1, 2, 3
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\EnemyControler.cs", "C#", 0, 6, 1, 7
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\GameControler.cs", "C#", 0, 1, 1, 2
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\GameOverScreen.cs", "C#", 0, 4, 1, 5
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\HealthControler.cs", "C#", 0, 0, 1, 1
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\InventoryControler.cs", "C#", 0, 0, 2, 2
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\ItemControler.cs", "C#", 0, 0, -3, -3
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\ItemPedestalControler.cs", "C#", 0, 0, 1, 1
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\Knockback.cs", "C#", -6, 0, -3, -9
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\LevelGeneration.cs", "C#", 10, -12, 24, 22
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\LoafOfBreadControler.cs", "C#", 2, 0, 2, 4
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\MagicTowerControler.cs", "C#", 11, 2, 1, 14
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\MagicTowerProjectile.cs", "C#", 8, 0, 2, 10
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\MagicTowerProjectileDestroy.cs", "C#", 13, 1, 5, 19
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\MapSpriteSelector.cs", "C#", -83, 0, -4, -87
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\PlayerControler.cs", "C#", -16, 5, 0, -11
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\Room.cs", "C#", 0, 1, 1, 2
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\RoomControler.cs", "C#", 0, 7, 1, 8
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\SandOfConceptionControler.cs", "C#", 2, 0, 2, 4
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\StartMenuControler.cs", "C#", 0, 1, 1, 2
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\StaticObstacleControler.cs", "C#", 0, 0, 1, 1
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\StrengthPotionControler.cs", "C#", 2, 0, 0, 2
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\ThunderControler.cs", "C#", 2, 0, 0, 2
+"d:\Projekty\RoguelikeGame - Praca Inżynierska\roguelike-game\Roguelike Game Project\Assets\Scripts\UtilityBehaviors.cs", "C#", -11, 0, -2, -13
+"Total", "-", -98, -227, 31, -294
