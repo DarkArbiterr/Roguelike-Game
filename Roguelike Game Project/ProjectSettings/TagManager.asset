@@ -11,6 +11,8 @@ TagManager:
   - Movebox
   - Hitbox
   - Item
+  - WallBulletCollider
+  - MagicTowerMoveBox
   layers:
   - Default
   - TransparentFX
@@ -50,6 +52,12 @@ TagManager:
     locked: 0
   - name: Layer 1
     uniqueID: 2425651459
+    locked: 0
+  - name: Chasing Enemy
+    uniqueID: 353118823
+    locked: 0
+  - name: Tower
+    uniqueID: 2668027807
     locked: 0
   - name: Layer 2
     uniqueID: 4250941897
@@ -95,4 +103,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3592342105
+    locked: 0
+  - name: Bullet
+    uniqueID: 1372032923
     locked: 0

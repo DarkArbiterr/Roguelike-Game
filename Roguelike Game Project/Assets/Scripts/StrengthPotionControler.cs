@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Klasa odpowiedzialna za działanie przedmiotu "Strength Potion"
+//Zwiększa obrażenia
+
 public class StrengthPotionControler : MonoBehaviour
 {
     public PlayerControler playerControler;
-    // Start is called before the first frame update
+    public string title = "Strength Potion";
+    public string description = "Damage Up!";
     void Start()
     {
         playerControler = GetComponent<PlayerControler>();
         playerControler.damage += 3;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
     }
 }

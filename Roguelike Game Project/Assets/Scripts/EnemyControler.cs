@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Klasa wspólna dla każdego typu przeciwnika, okreslajaca jego stan, statystyki, rodzaj,
+//kontrolująca przyjmowanie obrażen i zachowanie po śmierci
+
 public enum EnemyState
 {
     Active,
@@ -18,7 +21,6 @@ public enum EnemyType
 
 public class EnemyControler : MonoBehaviour
 {
-    // Start is called before the first frame update
     public float health;
     public static EnemyControler instance;
     public EnemyState currentState = EnemyState.Waiting;
@@ -34,7 +36,6 @@ public class EnemyControler : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         switch (currentState)
@@ -62,6 +63,7 @@ public class EnemyControler : MonoBehaviour
         }
     }
 
+    //Otrzymanie obrażeń
     public void Hit(float value)
     {
         health -= value;
@@ -69,6 +71,7 @@ public class EnemyControler : MonoBehaviour
         StartCoroutine(HitVisual());
     }
 
+    //Śmierć przeciwnika
     public void Death()
     {
         
@@ -89,23 +92,27 @@ public class EnemyControler : MonoBehaviour
         }
     }
 
+    //Stworzenie obiektu monety
     public void SpawnCoin()
     {
         var coin = Instantiate(coinSpawnOnDeath, transform.position,Quaternion.identity);
         coin.transform.parent = gameObject.transform.parent;
     }
 
+    //Wizualizacja zadania obrażeń
     IEnumerator HitVisual()
     {
         yield return new WaitForSeconds(0.1f);
         rend.color = Color.white;
     }
 
+    //Stan spoczynku przeciwnika
     void Waiting()
     {
         
     }
 
+    //Śmierć przeciwnika typu "BigSlime" (wytwarza nowych przeciwników po śmierci)
     void BigSlimeDeath()
     {
         float x = Random.Range(-20f, 20f);

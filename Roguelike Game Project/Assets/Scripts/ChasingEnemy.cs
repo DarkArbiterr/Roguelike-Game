@@ -2,25 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Klasa odpowiedzialna za zachowanie przeciwnika typu ChasingEnemy
+
 public class ChasingEnemy : MonoBehaviour
 {
     public float speed;
     public Vector2 direction;
-    public float attackRange;
     private bool coolDownAttack;
     private bool facingRight = true;
     public float coolDown;
     public EnemyControler enemyControler;
     GameObject target;
-    
-    
-    // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
+        GameObject[] magicTowerMovebox = GameObject.FindGameObjectsWithTag("MagicTowerMoveBox");
+        Collider2D[] colliders = GetComponents<Collider2D>();
+
+        //Ignorowanie kolizji między określonymi obiektami
+        for (int i = 0; i < magicTowerMovebox.Length; i++)
+        {
+            for (int j = 0; j < colliders.Length; j++)
+            {
+                Physics2D.IgnoreCollision(magicTowerMovebox[i].GetComponent<Collider2D>(), colliders[j]);
+            }
+        }   
     }
-    // Update is called once per frame
     void Update()
+    {
+        EnemyBehaviour();       
+    }
+
+    //Zachowanie przeciwnika ChasingEnemy (namierzanie gracza i poruszanie się w jego kierunku)
+    void EnemyBehaviour()
     {
         enemyControler = GetComponentInParent<EnemyControler>();
         if(enemyControler.notInRoom == false)
@@ -35,36 +49,24 @@ public class ChasingEnemy : MonoBehaviour
             {
                 Flip();
             }
-
-            if(Vector3.Distance(transform.position, target.transform.position) <= attackRange)
-                Attack();
-            else
-                transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
         }
-            
     }
 
-    void Attack()
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if(!coolDownAttack)
+        if(collider.tag == "Hitbox")
         {
             target.GetComponent<PlayerControler>().DamagePlayer();
-            StartCoroutine(CoolDown());
         }
     }
 
+    //Obrócenie animacji poruszania w odpowiednią stronę
     void Flip()
     {
         Vector3 currentScale = gameObject.transform.localScale;
         currentScale.x *= -1;
         gameObject.transform.localScale = currentScale;
         facingRight = !facingRight;
-    }
-
-    private IEnumerator CoolDown()
-    {
-        coolDownAttack = true;
-        yield return new WaitForSeconds(coolDown);
-        coolDownAttack = false;
     }
 }

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Klasa obsługująca zachowanie przeciwnika "MagicTowerController"
+
 public class MagicTowerControler : MonoBehaviour
 {
     private float lastFire;
@@ -12,17 +14,19 @@ public class MagicTowerControler : MonoBehaviour
     private GameObject player;
     private float delay = 0.73f;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        EnemyBehaviour();
+    }
+
+    //Zachowanie przeciwnika MagicTower (strzelanie w stronę przeciwnika)
+    public void EnemyBehaviour()
+    {
         enemyControler = GetComponentInParent<EnemyControler>();
         if(enemyControler.notInRoom == false)
         {
@@ -31,20 +35,30 @@ public class MagicTowerControler : MonoBehaviour
         }
     }
 
+    //Opóźnienie z jakim wystrzeliwane są pociski
     IEnumerator StartDelay()
     {
         shootNewProjectile = false;
         yield return new WaitForSeconds(delay);
         if (Time.time > lastFire + fireDelay)
-            {
-                Shoot();
-                lastFire = Time.time;
-            }
+        {
+            Shoot();
+            lastFire = Time.time;
+        }
         shootNewProjectile = true;
         if (delay == 0.73f)
             delay = 1.33f;
     }
 
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.tag == "Hitbox")
+        {
+            player.GetComponent<PlayerControler>().DamagePlayer();
+        }
+    }
+
+    //Wystrzelenie pocisku w kierunku gracza
     void Shoot()
     {
         Instantiate(projectile, transform.position, Quaternion.identity);

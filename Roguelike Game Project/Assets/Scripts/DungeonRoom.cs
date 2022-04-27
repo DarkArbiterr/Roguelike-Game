@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Klasa odpowiadajaca za kontrolę pojedyńczego pokoju
+
 public class DungeonRoom : MonoBehaviour
 {
     public float x;
     public float y;
-    // Start is called before the first frame update
+    public Transform[] objects;
+
     void Start()
     {
         if(RoomControler.instance == null)
         {
-            Debug.Log("You pressed play in the wrong scene!");
             return;
         }
         RoomControler.instance.RegisterRoom(this);
@@ -20,9 +22,10 @@ public class DungeonRoom : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector3(16,8,0));
+        Gizmos.DrawWireCube(transform.position, new Vector3(1280,720,0));
     }
 
+    //Współrzędne środka pokoju
     public Vector3 GetRoomCentre()
     {
         return new Vector3(x,y);

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Klasa obsługująca system zdrowia gracza
+
 public class HealthControler : MonoBehaviour
 {
     public int health;
@@ -11,7 +13,6 @@ public class HealthControler : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
-    // Update is called once per frame
     void Update()
     {
         if (health > numberOfHearts)

@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Klasa obsługująca piedestał na przedmiot
+
 public class ItemPedestalControler : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject[] itemPrefabs;
 
     void Start()
@@ -12,12 +13,12 @@ public class ItemPedestalControler : MonoBehaviour
         SpawnRandom();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
+    //Wybranie losowego przedmiotu z określonego zbioru
     private void SpawnRandom()
     {
         var toSpawn = itemPrefabs[Random.Range(0, itemPrefabs.Length)];

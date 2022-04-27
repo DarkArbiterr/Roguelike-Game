@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Klasa odpowiedzialna za obsługę gracza
+
 public class PlayerControler : MonoBehaviour
 {
     public static PlayerControler instance;
@@ -23,9 +25,9 @@ public class PlayerControler : MonoBehaviour
     public GameObject model;
     private GameControler gameController;
     
-    // Update is called once per frame
     void Update()
     {
+        //Poruszanie się i ustalanie kierunku strzału
         shootHorizontal = Input.GetAxis("ShootHorizontal");
         shootVertical = Input.GetAxis("ShootVertical");
 
@@ -58,6 +60,7 @@ public class PlayerControler : MonoBehaviour
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControler>();
     }
 
+    //Otrzymywanie obrażeń
     public void DamagePlayer()
     {
         if(isInvincible)
@@ -74,6 +77,7 @@ public class PlayerControler : MonoBehaviour
         StartCoroutine(Invulnerable());
     }
 
+    //Czas przez jaki gracz jest niewrażliwy na ataki (i wizualizacja tego stanu)
     IEnumerator Invulnerable()
     {
         Debug.Log("Player turned invincible!");
@@ -101,13 +105,14 @@ public class PlayerControler : MonoBehaviour
         model.transform.localScale = scale;
     }
 
+    //Zabicie gracza
     public void KillPlayer()
     {
         gameController.GameOver();
         Destroy(gameObject);
     }
 
-
+    //Wystrzelenie strzały
     void Shoot(float x, float y)
     {
         GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
@@ -120,43 +125,27 @@ public class PlayerControler : MonoBehaviour
         bullet.GetComponent<BulletControler>().damage = damage;
         // strzał w prawo
         if (x > 0 && y == 0)
-        {
             bullet.transform.rotation = Quaternion.Euler(0,0,0);
-        }
         // strzał w górę
         if (x == 0 && y > 0)
-        {
             bullet.transform.rotation = Quaternion.Euler(0,0,90);
-        }
         // strzał w górę i w prawo
         if (x > 0 && y > 0)
-        {
             bullet.transform.rotation = Quaternion.Euler(0,0,45);
-        }
-        // strzał w dół i w prawo !!
+        // strzał w dół i w prawo
         if (x > 0 && y < 0)
-        {
             bullet.transform.rotation = Quaternion.Euler(0,180,-135);
-        }
         // strzał w dół
         if (x == 0 && y < 0)
-        {
             bullet.transform.rotation = Quaternion.Euler(0,0,-90);
-        }
         // strzał w dół i lewo 
         if (x < 0 && y < 0)
-        {
             bullet.transform.rotation = Quaternion.Euler(0,0,-135);
-        }
-        // strzał w lewo !!
+        // strzał w lewo 
         if (x < 0 && y == 0)
-        {
             bullet.transform.rotation = Quaternion.Euler(180,0,180);
-        }
-        // strzał w lewo i w górę !!
+        // strzał w lewo i w górę 
         if (x < 0 && y > 0)
-        {
             bullet.transform.rotation = Quaternion.Euler(0,180,45);
-        }
     }
 }

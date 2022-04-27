@@ -2,26 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Klasa odpowiedzialna za funkcjonowanie pocisku gracza
+
 public class BulletControler : MonoBehaviour
 {
     public float lifeTime;
     public float pushPower;
-    public float knockTime;
     public float damage;
-    private Animator animator;
     public GameObject fallEffect;
-    // Start is called before the first frame update
+
     void Start()
     {
         StartCoroutine(DeathDelay());
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
+    //Zniszczenie strzały po danym czasie (i utworzenie nowego obiektu z animacją opadania)
     IEnumerator DeathDelay()
     {
         yield return new WaitForSeconds(lifeTime);
@@ -33,6 +33,7 @@ public class BulletControler : MonoBehaviour
     {
         if(colider.tag == "Enemy")
         {
+            //Kod odpowiedzialny za dodanie odrzutu przeciwnika po trafieniu
             bool isKnockback = colider.GetComponent<EnemyControler>().isKnockback;
             Rigidbody2D enemy = colider.GetComponent<Rigidbody2D>();
             if (isKnockback)
@@ -46,8 +47,9 @@ public class BulletControler : MonoBehaviour
             colider.gameObject.GetComponent<EnemyControler>().Hit(damage);
             
         }
-        if(colider.tag == "Wall" || colider.tag == "Obstacle" || colider.tag == "Room")
+        if(colider.tag == "WallBulletCollider" || colider.tag == "Obstacle" || colider.tag == "Room")
         {
+            Instantiate(fallEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

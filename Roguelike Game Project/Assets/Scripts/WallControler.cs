@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Klasa do obsługi ścian
+
 public class WallControler : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
+        //Ignorowanie pszczególnych kolizji
         GameObject[] hitbox = GameObject.FindGameObjectsWithTag("Hitbox");
         Collider2D[] walls = GetComponents<Collider2D>();
 
@@ -19,8 +21,6 @@ public class WallControler : MonoBehaviour
         }
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         

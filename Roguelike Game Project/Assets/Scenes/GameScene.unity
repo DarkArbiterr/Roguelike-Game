@@ -2173,9 +2173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7b6cb8afcdcb04e9cae1763e28ff9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomWhiteObj: {fileID: 168271965690942801, guid: 1e50e05183d1deb4792098adcf1da935,
-    type: 3}
-  mapRoot: {fileID: 0}
+  takenPositions: []
 --- !u!114 &2015722822
 MonoBehaviour:
   m_ObjectHideFlags: 0

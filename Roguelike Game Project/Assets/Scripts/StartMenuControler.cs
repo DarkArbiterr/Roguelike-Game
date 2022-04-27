@@ -4,25 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//Klasa obsługująca menu startowe
+
 public class StartMenuControler : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
+    //Przycisk startu
     public void StartButton()
     {
         SceneManager.LoadScene("GameScene");
     }
 
+    //Przycisk wyjścia
     public void QuitButton()
     {
         Debug.Log("Quit!");

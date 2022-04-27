@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Klasa odpowiedzialna za działanie przedmiotu "SandOfConception"
+//Zwiększa częstotliwość wystrzeliwanych strzał
+
 public class SandOfConceptionControler : MonoBehaviour
 {
     public PlayerControler playerControler;
-    // Start is called before the first frame update
+    public string title = "Sand Of Conception";
+    public string description = "Periodicity Up!";
+
     void Start()
     {
         playerControler = GetComponent<PlayerControler>();
         playerControler.fireDelay -= 0.1f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         

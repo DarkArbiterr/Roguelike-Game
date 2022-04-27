@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
+//Klasa przechowująca informacje o pokoju
+
 public class RoomInfo
 {
     public int x;
@@ -10,6 +12,8 @@ public class RoomInfo
     public int type;
     public bool upDoor, downDoor, leftDoor, rightDoor;
 }
+
+//Klasa obsługująca wszystkie pokoje wygenerowane przez algorytm
 
 public class RoomControler : MonoBehaviour
 {
@@ -25,17 +29,16 @@ public class RoomControler : MonoBehaviour
     {
         instance = this;
     }
-    // Start is called before the first frame update
     void Start()
     {
     }
 
-    // Update is called once per frame
     void Update()
     {
         UpdateRoomQueue();
     }
 
+    //Ładowanie pokoi na bieżąco (w momencie gdy jakieś znajdują sie w kolejce do załadowania)
     void UpdateRoomQueue()
     {
         if (isLoadingRoom)
@@ -43,6 +46,7 @@ public class RoomControler : MonoBehaviour
             return;
         }
 
+        //Gdy wszystkie pokoje są załadowane, wtedy przechodzimy do monitorowania pokoi
         if (loadRoomQueue.Count == 0)
         {
             UpdateRooms();
@@ -55,23 +59,25 @@ public class RoomControler : MonoBehaviour
         StartCoroutine(LoadRoomRoutine(currentLoadRoomData));
     }
 
+    //Załadowanie pokoju do kolejki
     public void LoadRoom(Room room, int x, int y)
 	{
         if (DoesRoomExist(x,y))
         {
             return;
         }
-		RoomInfo newRoomData = new RoomInfo();
-        newRoomData.type = room.type;
-        newRoomData.x = x;
-        newRoomData.y = y;
-        newRoomData.upDoor = room.upDoor;
-        newRoomData.downDoor = room.downDoor;
-        newRoomData.leftDoor = room.leftDoor;
-        newRoomData.rightDoor = room.rightDoor;
-        loadRoomQueue.Enqueue(newRoomData);
+		RoomInfo newRoomInfo = new RoomInfo();
+        newRoomInfo.upDoor = room.upDoor;
+        newRoomInfo.downDoor = room.downDoor;
+        newRoomInfo.leftDoor = room.leftDoor;
+        newRoomInfo.rightDoor = room.rightDoor;
+        newRoomInfo.type = room.type;
+        newRoomInfo.x = x;
+        newRoomInfo.y = y;
+        loadRoomQueue.Enqueue(newRoomInfo);
 	}
 
+    //Załadowanie odpowiedniej sceny z pokojem (w zależności od ilości drzwi i typu)
 	IEnumerator LoadRoomRoutine(RoomInfo room)
 	{
         int r = Random.Range(1,6);
@@ -202,6 +208,7 @@ public class RoomControler : MonoBehaviour
 		}
 	}
 
+    //Załadowanie danych do pojedynczego pokoju
 	public void RegisterRoom(DungeonRoom room)
 	{
 		room.transform.position = new Vector3(
@@ -220,15 +227,17 @@ public class RoomControler : MonoBehaviour
         {
             CameraControler.instance.currentRoom = room;
         }
-
+        //Dodanie pokoju do listy załadowanych pokoi
 		loadedRooms.Add(room);
 	}
 
+    //Sprawdzanie czy pokój już został załadowany
     public bool DoesRoomExist(int x, int y)
     {
         return loadedRooms.Find(item => item.x == x && item.y == y) != null;
     }
 
+    //Przemieszczenie kamery gdy gracz zmieni pokój
     public void OnPlayerEnterRoom(DungeonRoom room)
     {
         CameraControler.instance.currentRoom = room;
@@ -237,6 +246,7 @@ public class RoomControler : MonoBehaviour
         UpdateRooms();
     }
 
+    //Aktualizacja pokoi, w momencie gdy już wszystkie zostały załadowane
     public void UpdateRooms()
     {
         foreach(DungeonRoom room in loadedRooms)
@@ -249,7 +259,6 @@ public class RoomControler : MonoBehaviour
                     foreach(EnemyControler enemy in enemies)
                     {
                         enemy.notInRoom = true;
-                        //Debug.Log("Not in room");
                     }
                 }
             }
@@ -261,7 +270,6 @@ public class RoomControler : MonoBehaviour
                     foreach(EnemyControler enemy in enemies)
                     {
                         enemy.notInRoom = false;
-                        //Debug.Log("In room");
                     }
                 }
             }

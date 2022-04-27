@@ -2,22 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Klasa do obsługi kamery
+
 public class CameraControler : MonoBehaviour
 {
     public static CameraControler instance;
     public DungeonRoom currentRoom;
     public float moveSpeedRoomChange;
-
     void Awake()
     {
         instance = this;
     }
-    // Update is called once per frame
+
     void Update()
     {
         UpdatePosition();
     }
-
+    
+    //Nasłuchiwanie na zmianę pokoju, przy zmianie nastepuje przesunięcie kamery na dany pokój
     void UpdatePosition()
     {
         if (currentRoom == null)
@@ -29,7 +31,7 @@ public class CameraControler : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * moveSpeedRoomChange);
     }
-
+    //Pozyskanie pozycji nowego pokoju
     Vector3 GetCameraTargetPosition()
     {
         if (currentRoom == null)
@@ -43,8 +45,4 @@ public class CameraControler : MonoBehaviour
         return targetPosition;
     }
 
-    public bool IsSwitchingScene()
-    {
-        return transform.position.Equals(GetCameraTargetPosition()) == false;
-    }
 }

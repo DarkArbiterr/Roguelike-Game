@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Klasa do obsługi gry
+
 public class GameControler : MonoBehaviour
 {
     public static GameControler instance;
     public GameOverScreen gameOverScreen;
     
-    private void Awake()
+    void Start()
     {
         
     }
-    // Update is called once per frame
+    
     void Update()
     {
         
     }
 
+    //Wyświetlenie ekranu Game Over
     public void GameOver()
     {
         gameOverScreen.Setup();
     }
-
 }

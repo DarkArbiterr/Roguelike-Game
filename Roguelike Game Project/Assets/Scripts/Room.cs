@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Klasa definiująca pokoje, wykorzystywana przy generowaniu dungeonu
+
 public class Room
 {
     public Vector2 gridPosition;

@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Klasa odpowiedzialna za działanie przedmiotu "Loaf Of Bread"
+//Zwiększa ilość serduszek o 2 i w pełni uzdrawia
+
 public class LoafOfBreadControler : MonoBehaviour
 {
     public HealthControler healthControler;
-    // Start is called before the first frame update
+    public string title = "Loaf Of Bread";
+    public string description = "Double Health Up!";
+
     void Start()
     {
         healthControler = GetComponent<HealthControler>();
@@ -13,7 +18,6 @@ public class LoafOfBreadControler : MonoBehaviour
         healthControler.health = healthControler.numberOfHearts;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
