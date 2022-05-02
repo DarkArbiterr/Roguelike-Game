@@ -13,6 +13,7 @@ public class ThunderControler : MonoBehaviour
 
     void Start()
     {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControler>().SetupInfo(title, description);
         playerControler = GetComponent<PlayerControler>();
         playerControler.moveSpeed += 20;
     }

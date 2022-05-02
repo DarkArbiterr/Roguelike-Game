@@ -12,6 +12,7 @@ public class StrengthPotionControler : MonoBehaviour
     public string description = "Damage Up!";
     void Start()
     {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControler>().SetupInfo(title, description);
         playerControler = GetComponent<PlayerControler>();
         playerControler.damage += 3;
     }

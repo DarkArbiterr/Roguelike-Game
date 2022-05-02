@@ -13,6 +13,7 @@ public class SandOfConceptionControler : MonoBehaviour
 
     void Start()
     {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControler>().SetupInfo(title, description);
         playerControler = GetComponent<PlayerControler>();
         playerControler.fireDelay -= 0.1f;
     }

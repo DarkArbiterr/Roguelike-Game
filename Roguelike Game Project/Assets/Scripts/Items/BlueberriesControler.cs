@@ -9,10 +9,11 @@ public class BlueberriesControler : MonoBehaviour
 {
     public PlayerControler playerControler;
     public string title = "Blueberries";
-    public string description = "Speed Up!";
+    public string description = "Bullet speed Up!";
 
     void Start()
     {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControler>().SetupInfo(title, description);
         playerControler = GetComponent<PlayerControler>();
         playerControler.bulletSpeed += 50;
     }

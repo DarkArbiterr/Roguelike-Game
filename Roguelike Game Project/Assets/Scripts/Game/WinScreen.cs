@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-//Klasa do obsługi ekranu Game Over
-
-public class GameOverScreen : MonoBehaviour
+public class WinScreen : MonoBehaviour
 {
-    //Wyświetlenie ekranu Game Over
-    public void Setup()
+    public Text coinsText;
+
+    //Wyświetlenie ekranu Win
+    public void Setup(int coins)
     {
+        coinsText.text = "Coins: " + coins.ToString("D2");
         gameObject.SetActive(true);
     }
 

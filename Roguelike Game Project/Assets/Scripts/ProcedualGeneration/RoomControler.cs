@@ -24,6 +24,7 @@ public class RoomControler : MonoBehaviour
     DungeonRoom currentRoom;
 	public List<DungeonRoom> loadedRooms = new List<DungeonRoom>();
     bool isLoadingRoom = false;
+    private bool countEnemies = true;
 
     void Awake()
     {
@@ -49,6 +50,9 @@ public class RoomControler : MonoBehaviour
         //Gdy wszystkie pokoje są załadowane, wtedy przechodzimy do monitorowania pokoi
         if (loadRoomQueue.Count == 0)
         {
+            if (countEnemies)
+                GameControler.instance.CountEnemies();
+            countEnemies = false;
             UpdateRooms();
             return;
         }

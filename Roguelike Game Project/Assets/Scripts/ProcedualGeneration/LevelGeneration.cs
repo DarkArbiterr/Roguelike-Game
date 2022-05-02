@@ -8,7 +8,7 @@ using UnityEngine;
 public class LevelGeneration : MonoBehaviour 
 {
 	int gridSizeX, gridSizeY;
-	int numberOfRooms = 12;
+	public int numberOfRooms = 15;
 	public List<Vector2> takenPositions = new List<Vector2>();
 	Vector2 worldSize = new Vector2(4,4);
 	public static Room[,] rooms;
@@ -88,7 +88,7 @@ public class LevelGeneration : MonoBehaviour
 		return checkingPosition;
 	}
 
-	//Druga metoda wyboru pozycji pokoju
+	//Druga metoda wyboru pozycji pokoju (gdy chcemy by układ był mniej skomplikowany)
 	Vector2 SelectiveNewPosition()
 	{
 		int index = 0, i = 0;

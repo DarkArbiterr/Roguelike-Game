@@ -37,7 +37,7 @@ public class ChasingEnemy : MonoBehaviour
     void EnemyBehaviour()
     {
         enemyControler = GetComponentInParent<EnemyControler>();
-        if(enemyControler.notInRoom == false)
+        if(enemyControler.notInRoom == false && target != null)
         {
             direction = target.transform.position - transform.position;
 

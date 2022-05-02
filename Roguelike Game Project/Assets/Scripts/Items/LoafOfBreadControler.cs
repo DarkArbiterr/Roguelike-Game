@@ -13,6 +13,7 @@ public class LoafOfBreadControler : MonoBehaviour
 
     void Start()
     {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControler>().SetupInfo(title, description);
         healthControler = GetComponent<HealthControler>();
         healthControler.numberOfHearts += 2;
         healthControler.health = healthControler.numberOfHearts;

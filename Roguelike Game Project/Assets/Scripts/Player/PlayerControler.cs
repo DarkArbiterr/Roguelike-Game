@@ -20,6 +20,7 @@ public class PlayerControler : MonoBehaviour
     private Vector3 moveDirection;
     private Animator animator;
     private HealthControler healthControler;
+    private InventoryControler inventoryControler;
     private bool isInvincible = false;
     public float damage = 5;
     public GameObject model;
@@ -57,6 +58,7 @@ public class PlayerControler : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         healthControler = GetComponent<HealthControler>();
+        inventoryControler = GetComponent<InventoryControler>();
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControler>();
     }
 
@@ -108,7 +110,8 @@ public class PlayerControler : MonoBehaviour
     //Zabicie gracza
     public void KillPlayer()
     {
-        gameController.GameOver();
+        healthControler.hearts[0].sprite = healthControler.emptyHeart;
+        gameController.GameOver(inventoryControler.coins);
         Destroy(gameObject);
     }
 
